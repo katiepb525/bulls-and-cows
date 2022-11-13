@@ -34,8 +34,6 @@ class Computer
   # generate a random 4 digit code using only the nums 1-6
   def generate_rand_code
     @master_code = 4.times.map { rand(1..6) } # create array of random numbers
-    @master_code = @master_code.join('') # join array
-    @master_code = @master_code.to_i # convert to int
   end
 end
 
