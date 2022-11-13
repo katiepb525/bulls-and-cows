@@ -35,6 +35,17 @@ class Computer
   def generate_rand_code
     @master_code = 4.times.map { rand(1..6) } # create array of random numbers
   end
+
+  def find_bulls_cows(player)
+    # store player's guess in array form
+    player_guess = player.guess_to_array
+    # create var to store clue, clue being player guess at default
+    clue = player_guess
+    # if player guess includes number in master code (but not correct place)
+    # replace clue num with "A" (A means cow, correct num bad spot)
+    # elsif player guess includes number AND matches place in master code
+    # replace clue num with "B" (B means bull, correct num correct spot)
+  end
 end
 
 # display input of player, output of computer, current round etc.
