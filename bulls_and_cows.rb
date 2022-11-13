@@ -6,6 +6,14 @@ class Player
   def initialize
     @guess = gets.chomp # will be string
   end
+
+  # check if guess input is valid
+  def player_input_ok?; end
+
+  # convert guess to number
+  def guess_to_num
+    @guess.to_i
+  end
 end
 
 # store all methods relating to computer
