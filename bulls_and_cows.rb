@@ -2,6 +2,10 @@
 
 # store all methods relating to player
 class Player
+  # have guess be gets by default
+  def initialize
+    @guess = gets.chomp # will be string
+  end
 end
 
 # store all methods relating to computer
