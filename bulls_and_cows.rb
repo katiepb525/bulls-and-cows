@@ -30,7 +30,7 @@ class Computer
   attr_reader :master_code
 
   def initialize
-    @master_code
+    @master_code = %w[1 2 3 4]
   end
 
   # generate a random 4 digit code using only the nums 1-6
@@ -53,7 +53,8 @@ class Computer
       # if player guess includes number in master code (but not correct place)
       elsif player_guess.include?(e)
         # replace clue num with "cow" (A)
-        clue[idx] = 'A'
+        cow_index = player_guess.find_index(e)
+        clue[cow_index] = 'A'
       end
     end
 
@@ -68,3 +69,15 @@ end
 # define rules for a game, define steps for a game, win/lose conditions etc.
 class NewGame
 end
+
+computer = Computer.new
+
+# p computer.generate_rand_code
+
+p computer.master_code
+
+p 'Enter your guess:'
+
+player = Player.new(gets.chomp)
+
+p computer.find_bulls_cows(player)
