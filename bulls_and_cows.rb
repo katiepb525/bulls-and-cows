@@ -25,6 +25,11 @@ end
 
 # store all methods relating to computer
 class Computer
+  attr_reader :master_code
+
+  def initialize
+    @master_code
+  end
 end
 
 # display input of player, output of computer, current round etc.
