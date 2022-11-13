@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
+require 'pry-byebug'
+
 # store all methods relating to player
 class Player
   attr_reader :guess
 
   # have guess be gets by default
-  def initialize
-    @guess = gets.chomp # will be string
+  def initialize(guess)
+    @guess = guess
   end
 
   # check if guess input is valid
