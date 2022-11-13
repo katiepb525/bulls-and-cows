@@ -36,6 +36,7 @@ class Computer
   # generate a random 4 digit code using only the nums 1-6
   def generate_rand_code
     @master_code = 4.times.map { rand(1..6) } # create array of random numbers
+    @master_code.map!(&:to_s) # convert array to string (to compare with guess)
   end
 
   def find_bulls_cows(player)
