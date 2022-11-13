@@ -15,8 +15,10 @@ class Player
     @guess.count('^1-6').zero? && @guess.count('1-6') == 4
   end
 
-  # convert guess to number
+  # convert guess to number IF player input is ok, otherwise return nil
   def guess_to_num
+    return unless player_input_ok?
+
     @guess.to_i
   end
 end
