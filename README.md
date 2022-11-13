@@ -1,0 +1,1 @@
+Odin project's "Mastermind". Decided to make bulls and cows, which is essentially the same game but without the visual flair.
