@@ -98,6 +98,10 @@ class NewGame
     @player.guess = (gets.chomp)
     p @computer.find_bulls_cows(@player)
   end
+
+  def player_won?
+    @computer.find_bulls_cows(@player) == %w[B B B B]
+  end
 end
 
 game = NewGame.new
