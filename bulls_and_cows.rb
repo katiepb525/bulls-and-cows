@@ -72,4 +72,13 @@ end
 
 # define rules for a game, define steps for a game, win/lose conditions etc.
 class NewGame
+  def initialize
+    @player = Player.new
+    @computer = Computer.new
+    @display = Display.new
+  end
+
+  def start_game; end
+
+  def play_round; end
 end
