@@ -63,6 +63,11 @@ end
 
 # display input of player, output of computer, current round etc.
 class Display
+  def initialize
+    @prev_guesses = []
+    @prev_clues = []
+    @current_round = 0
+  end
 end
 
 # define rules for a game, define steps for a game, win/lose conditions etc.
