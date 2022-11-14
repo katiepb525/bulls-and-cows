@@ -87,6 +87,10 @@ class NewGame
     until current_round == @MAX_TURNS
       puts "you are on round #{current_round} / #{@MAX_TURNS}"
       play_round
+      if player_won? == true
+        puts 'you win!!'
+        return
+      end
       current_round += 1
     end
 
