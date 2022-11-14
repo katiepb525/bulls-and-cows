@@ -29,7 +29,7 @@ class Computer
   attr_reader :master_code
 
   def initialize
-    @master_code = %w[1 2 3 4]
+    @master_code = generate_rand_code
   end
 
   # generate a random 4 digit code using only the nums 1-6
