@@ -69,15 +69,3 @@ end
 # define rules for a game, define steps for a game, win/lose conditions etc.
 class NewGame
 end
-
-computer = Computer.new
-
-# p computer.generate_rand_code
-
-p computer.master_code
-
-p 'Enter your guess:'
-
-player = Player.new(gets.chomp)
-
-p computer.find_bulls_cows(player)
