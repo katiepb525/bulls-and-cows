@@ -89,6 +89,8 @@ class NewGame
       play_round
       current_round += 1
     end
+
+    puts "you lose.. :[\nthe answer was #{computer.master_code}!"
   end
 
   def play_round
