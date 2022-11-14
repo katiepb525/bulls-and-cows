@@ -109,4 +109,4 @@ class NewGame
 end
 
 game = NewGame.new
-game.play_round
+game.start_game
