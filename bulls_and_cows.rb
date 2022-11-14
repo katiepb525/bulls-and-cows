@@ -6,9 +6,8 @@ require 'pry-byebug'
 class Player
   attr_accessor :guess
 
-  # have guess be gets by default
-  def initialize(guess)
-    @guess = guess
+  def initialize
+    @guess = ' '
   end
 
   # check if guess input is valid
