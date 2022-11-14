@@ -44,10 +44,20 @@ class Computer
     player_guess = player.guess_to_array
     # create var to store clue, clue being player guess at default
     clue = player_guess
-    # if player guess includes number in master code (but not correct place)
-    # replace clue num with "A" (A means cow, correct num bad spot)
-    # elsif player guess includes number AND matches place in master code
-    # replace clue num with "B" (B means bull, correct num correct spot)
+
+    @master_code.each_with_index do |e, idx|
+      # if player guess includes number AND matches place in master
+      if player_guess[idx] == e
+        # replace clue num with "bull" (B)
+        clue[idx] = 'B'
+      # if player guess includes number in master code (but not correct place)
+      elsif player_guess.include?(e)
+        # replace clue num with "cow" (A)
+        clue[idx] = 'A'
+      end
+    end
+
+    clue
   end
 end
 
