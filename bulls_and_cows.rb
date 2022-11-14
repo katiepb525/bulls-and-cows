@@ -84,7 +84,7 @@ class NewGame
     puts 'game start!'
     current_round = 1
 
-    until current_round == MAX_TURNS
+    until current_round == @MAX_TURNS
       puts "you are on round #{current_round} / #{@MAX_TURNS}"
       play_round
       current_round += 1
