@@ -4,7 +4,7 @@ require 'pry-byebug'
 
 # store all methods relating to player
 class Player
-  attr_reader :guess
+  attr_accessor :guess
 
   # have guess be gets by default
   def initialize(guess)
