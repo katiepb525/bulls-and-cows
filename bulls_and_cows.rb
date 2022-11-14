@@ -76,14 +76,20 @@ class NewGame
     @player = Player.new
     @computer = Computer.new
     @display = Display.new
+    # max number of turns in a game
+    @MAX_TURNS = 12
   end
 
-  def start_game; end
+  def start_game
+    puts 'game start!'
+    current_round = 1
+    puts "you are on round #{current_round}"
+  
+  end
 
   def play_round
     puts 'enter a guess:'
     @player.guess = (gets.chomp)
-    p @computer.master_code
     p @computer.find_bulls_cows(@player)
   end
 end
