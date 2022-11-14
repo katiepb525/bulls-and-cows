@@ -80,5 +80,13 @@ class NewGame
 
   def start_game; end
 
-  def play_round; end
+  def play_round
+    puts 'enter a guess:'
+    @player.guess = (gets.chomp)
+    p @computer.master_code
+    p @computer.find_bulls_cows(@player)
+  end
 end
+
+game = NewGame.new
+game.play_round
