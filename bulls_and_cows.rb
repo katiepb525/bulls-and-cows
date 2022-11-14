@@ -83,8 +83,7 @@ class NewGame
   def start_game
     puts 'game start!'
     current_round = 1
-    puts "you are on round #{current_round}"
-  
+    puts "you are on round #{current_round} / #{@MAX_TURNS}"
   end
 
   def play_round
