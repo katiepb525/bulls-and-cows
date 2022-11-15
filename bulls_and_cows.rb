@@ -133,4 +133,4 @@ class NewGame
 end
 
 game = NewGame.new
-game.start_game
+game.master_or_guesser?
