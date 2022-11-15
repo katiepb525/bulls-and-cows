@@ -3,6 +3,33 @@
 require 'pry-byebug'
 
 module Master
+  # generate a random 4 digit code using only the nums 1-6
+  def generate_rand_code
+    @master_code = 4.times.map { rand(1..6) } # create array of random numbers
+    @master_code.map!(&:to_s) # convert array to string (to compare with guess)
+  end
+
+  def find_bulls_cows(player)
+    # store player's guess in array form
+    player_guess = player.guess_to_array
+    # create var to store clue, clue being player guess at default
+    clue = player_guess
+
+    @master_code.each_with_index do |e, idx|
+      # if player guess includes number AND matches place in master
+      if player_guess[idx] == e
+        # replace clue num with "bull" (B)
+        clue[idx] = 'B'
+      # if player guess includes number in master code (but not correct place)
+      elsif player_guess.include?(e)
+        # replace clue num with "cow" (A)
+        cow_index = player_guess.find_index(e)
+        clue[cow_index] = 'A'
+      end
+    end
+
+    clue
+  end
 end
 
 module Guesser
@@ -31,7 +58,6 @@ class Player
   def initialize
     @master_or_guesser = ''
   end
-  
 end
 
 # store all methods relating to computer
@@ -42,34 +68,6 @@ class Computer
   def initialize
     @master_or_guesser = ''
     @master_code = generate_rand_code
-  end
-
-  # generate a random 4 digit code using only the nums 1-6
-  def generate_rand_code
-    @master_code = 4.times.map { rand(1..6) } # create array of random numbers
-    @master_code.map!(&:to_s) # convert array to string (to compare with guess)
-  end
-
-  def find_bulls_cows(player)
-    # store player's guess in array form
-    player_guess = player.guess_to_array
-    # create var to store clue, clue being player guess at default
-    clue = player_guess
-
-    @master_code.each_with_index do |e, idx|
-      # if player guess includes number AND matches place in master
-      if player_guess[idx] == e
-        # replace clue num with "bull" (B)
-        clue[idx] = 'B'
-      # if player guess includes number in master code (but not correct place)
-      elsif player_guess.include?(e)
-        # replace clue num with "cow" (A)
-        cow_index = player_guess.find_index(e)
-        clue[cow_index] = 'A'
-      end
-    end
-
-    clue
   end
 end
 
