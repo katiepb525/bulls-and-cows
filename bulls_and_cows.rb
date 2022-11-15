@@ -4,10 +4,10 @@ require 'pry-byebug'
 
 # include all methods required to be the master (maybe change module name because these are only automated methods)
 module Master
-  attr_reader :master_code
+  attr_accessor :master_code
 
   def initialize
-    @master_code = generate_rand_code
+    @master_code = []
   end
 
   # generate a random 4 digit code using only the nums 1-6
