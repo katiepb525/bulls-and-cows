@@ -89,7 +89,12 @@ class NewGame
   end
 
   # method where the player picks the master code and the computer must guess
-  def start_master_game; end
+  def start_master_game
+    until player_input_ok?(@player.master_code)
+      puts "enter your secret code. 4 digits, and numbers 1-6 only please.\n e.g. 1234"
+      @player.master_code = (gets.chomp)
+    end
+  end
 
   # method where the computer generates the master code and the player must guess
   def start_guesser_game
