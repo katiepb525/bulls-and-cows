@@ -63,12 +63,6 @@ end
 class Player
   extend Master
   extend Guesser
-
-  attr_accessor :master_or_guesser
-
-  def initialize
-    @master_or_guesser = ''
-  end
 end
 
 # store all methods relating to computer
@@ -121,12 +115,9 @@ class NewGame
     end
 
     if answer == 'M'
-      @player.master_or_guesser = 'M'
-      @computer.master_or_guesser = 'G'
-
+      start_master_game
     elsif answer == 'G'
-      @player.master_or_guesser = 'G'
-      @computer.master_or_guesser = 'M'
+      start_guesser_game
     end
   end
 
