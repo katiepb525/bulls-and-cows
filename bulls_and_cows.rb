@@ -59,6 +59,9 @@ end
 
 # store all methods relating to player
 class Player
+  extend Master
+  extend Guesser
+
   attr_accessor :master_or_guesser
 
   def initialize
