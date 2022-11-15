@@ -3,6 +3,12 @@
 require 'pry-byebug'
 
 module Master
+  attr_reader :master_code
+
+  def initialize
+    @master_code = generate_rand_code
+  end
+
   # generate a random 4 digit code using only the nums 1-6
   def generate_rand_code
     @master_code = 4.times.map { rand(1..6) } # create array of random numbers
