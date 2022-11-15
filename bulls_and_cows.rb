@@ -41,6 +41,8 @@ end
 
 # include all methods required to be the guesser (maybe change because these methods require player input, create seperate module for an automated guesser )
 module Guesser
+  attr_accessor :guess
+
   def initialize
     @guess = ''
   end
@@ -53,7 +55,7 @@ module Guesser
 
   # convert guess to array IF player input is ok, otherwise return nil
   def guess_to_array
-    return unless player_input_ok?
+    return unless player_input_ok?(@guess)
 
     @guess.split('')
   end
