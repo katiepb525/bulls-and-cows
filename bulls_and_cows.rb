@@ -30,6 +30,7 @@ class Computer
   attr_reader :master_code
 
   def initialize
+    @master_or_guesser = ''
     @master_code = generate_rand_code
   end
 
