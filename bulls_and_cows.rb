@@ -2,6 +2,7 @@
 
 require 'pry-byebug'
 
+# include all methods required to be the master (maybe change module name because these are only automated methods)
 module Master
   attr_reader :master_code
 
@@ -38,6 +39,7 @@ module Master
   end
 end
 
+# include all methods required to be the guesser (maybe change because these methods require player input, create seperate module for an automated guesser )
 module Guesser
   def initialize
     @master_or_guesser = ''
