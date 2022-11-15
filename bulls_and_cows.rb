@@ -94,7 +94,8 @@ class NewGame
     @MAX_TURNS = 12
   end
 
-  def start_game
+  # method where the computer generates the master code and the player must guess
+  def start_guesser_game
     puts 'game start!'
     current_round = 1
 
