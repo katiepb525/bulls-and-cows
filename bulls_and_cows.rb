@@ -4,7 +4,7 @@ require 'pry-byebug'
 
 # store all methods relating to player
 class Player
-  attr_accessor :guess
+  attr_accessor :guess :master_or_guesser
 
   def initialize
     @master_or_guesser = ''
@@ -28,6 +28,7 @@ end
 # store all methods relating to computer
 class Computer
   attr_reader :master_code
+  attr_accessor :master_or_guesser
 
   def initialize
     @master_or_guesser = ''
