@@ -67,14 +67,7 @@ class Player
 end
 
 # store all methods relating to computer
-class Computer
-  attr_reader :master_code
-  attr_accessor :master_or_guesser
-
-  def initialize
-    @master_or_guesser = ''
-    @master_code = generate_rand_code
-  end
+class Computer < Player
 end
 
 # display input of player, output of computer, current round etc.
