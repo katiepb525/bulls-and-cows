@@ -6,15 +6,8 @@ module Master
 end
 
 module Guesser
-end
-
-# store all methods relating to player
-class Player
-  attr_accessor :guess, :master_or_guesser
-
   def initialize
     @master_or_guesser = ''
-    @guess = ' '
   end
 
   # check if guess input is valid
@@ -29,6 +22,16 @@ class Player
 
     @guess.split('')
   end
+end
+
+# store all methods relating to player
+class Player
+  attr_accessor :master_or_guesser
+
+  def initialize
+    @master_or_guesser = ''
+  end
+  
 end
 
 # store all methods relating to computer
