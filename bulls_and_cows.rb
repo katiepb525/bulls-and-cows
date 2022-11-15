@@ -42,7 +42,7 @@ end
 # include all methods required to be the guesser (maybe change because these methods require player input, create seperate module for an automated guesser )
 module Guesser
   def initialize
-    @master_or_guesser = ''
+    @guess = ''
   end
 
   # check if guess input is valid
