@@ -7,6 +7,7 @@ class Player
   attr_accessor :guess
 
   def initialize
+    @master_or_guesser = ''
     @guess = ' '
   end
 
