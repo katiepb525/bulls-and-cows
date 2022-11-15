@@ -2,6 +2,12 @@
 
 require 'pry-byebug'
 
+module Master
+end
+
+module Guesser
+end
+
 # store all methods relating to player
 class Player
   attr_accessor :guess, :master_or_guesser
