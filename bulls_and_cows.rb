@@ -46,9 +46,9 @@ module Guesser
   end
 
   # check if guess input is valid
-  def player_input_ok?
+  def player_input_ok?(input)
     # check if guess ONLY contains numbers 1-6 AND has exactly four chars
-    @guess.count('^1-6').zero? && @guess.count('1-6') == 4
+    input.count('^1-6').zero? && input.count('1-6') == 4
   end
 
   # convert guess to array IF player input is ok, otherwise return nil
