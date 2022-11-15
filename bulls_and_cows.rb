@@ -98,6 +98,22 @@ class NewGame
     puts "you lose.. :[\nthe answer was #{@computer.master_code}!"
   end
 
+  def master_or_guesser?
+    until answer == 'M' || answer == 'G'
+      puts "press 'M' if you'd like to be the master.\npress 'G' if you'd like to be the guesser."
+      answer = gets.chomp
+    end
+
+    if answer == 'M'
+      @player.master_or_guesser = 'M'
+      @computer.master_or_guesser = 'G'
+
+    elsif answer == 'G'
+      @player.master_or_guesser = 'G'
+      @computer.master_or_guesser = 'M'
+    end
+  end
+
   def play_round
     puts 'enter a guess:'
     @player.guess = (gets.chomp)
