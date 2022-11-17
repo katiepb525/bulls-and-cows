@@ -59,12 +59,6 @@ module Guesser
 
     @guess.split('')
   end
-
-  # automated: computer will solve game according to donald kuth's algorithm
-  def generate_guess
-    # step 1: generate set S of all possible codes
-    s = (1111..6666).to_a
-  end
 end
 
 # store all methods relating to player
@@ -102,6 +96,15 @@ class NewGame
       puts "enter your secret code. 4 digits, and numbers 1-6 only please.\n e.g. 1234"
       @player.master_code = (gets.chomp)
     end
+    
+    # automated: computer will solve game according to donald kuth's algorithm
+    # step 1: generate set S of all possible codes
+    s = (1111..6666).to_a
+
+    # start with initial guess 1122
+    
+  end
+
   end
 
   # method where the computer generates the master code and the player must guess
