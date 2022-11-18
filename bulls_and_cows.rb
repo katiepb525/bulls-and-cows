@@ -115,7 +115,7 @@ class NewGame
     until current_round == @MAX_TURNS
       puts "you are on round #{current_round} / #{@MAX_TURNS}"
       play_round
-      if player_won? == true
+      if player_won?(@player) == true
         puts 'you win!!'
         return
       end
@@ -143,8 +143,34 @@ class NewGame
     p @computer.find_bulls_cows(@player)
   end
 
-  def player_won?
-    @computer.find_bulls_cows(@player) == %w[B B B B]
+  # automated: computer will solve game according to donald kuth's algorithm
+  def com_play_round
+    # step 1: generate set S of all possible codes
+    s = (1111..6666).to_a
+
+    # step 2: start with initial guess 1122
+    @computer.guess = 1122
+
+    # step 3: play guess to get response
+    puts "testing guess: #{@computer.guess}"
+
+    # step 3.5 get score
+    score = @computer.find_bulls_cows(@computer)
+
+    p score
+
+    # # step 4: if computer didnt win...
+    # if player_won?(@computer) == false
+
+    #   # remove all elements of s that do not give the same score..
+    #   s.slice!(s.index(@computer.guess))
+
+    # end
+  end
+
+  # check if player won
+  def player_won?(current_player)
+    @computer.find_bulls_cows(current_player) == %w[B B B B]
   end
 end
 
