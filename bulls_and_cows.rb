@@ -16,9 +16,9 @@ module Master
     @master_code.map!(&:to_s) # convert array to string (to compare with guess)
   end
 
-  def find_bulls_cows(player)
+  def find_bulls_cows(player_guess)
     # store player's guess in array form
-    player_guess = player.guess_to_array
+    player_guess = guess_to_array(player_guess)
     # create var to store clue, clue being player guess at default
     clue = player_guess
 
@@ -54,10 +54,10 @@ module Guesser
   end
 
   # convert guess to array IF player input is ok, otherwise return nil
-  def guess_to_array
-    return unless player_input_ok?(@guess)
+  def guess_to_array(guess)
+    return unless player_input_ok?(guess)
 
-    @guess.split('')
+    guess.split('')
   end
 end
 
