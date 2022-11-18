@@ -96,15 +96,18 @@ class NewGame
       puts "enter your secret code. 4 digits, and numbers 1-6 only please.\n e.g. 1234"
       @player.master_code = (gets.chomp)
     end
-    
-    # automated: computer will solve game according to donald kuth's algorithm
-    # step 1: generate set S of all possible codes
-    s = (1111..6666).to_a
 
-    # start with initial guess 1122
-    
-  end
+    puts 'game start!'
+    current_round = 1
 
+    until current_round == @MAX_TURNS
+      puts "round #{current_round} / #{MAX_TURNS}"
+      current_round += 1
+      if player_won?(@computer) == true
+        'computer won!!'
+        return
+      end
+    end
   end
 
   # method where the computer generates the master code and the player must guess
