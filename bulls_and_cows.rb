@@ -39,7 +39,7 @@ module Master
   end
 end
 
-# include all methods required to be the guesser (maybe change because these methods require player input, create seperate module for an automated guesser )
+# include all methods required to be the guesser
 module Guesser
   attr_accessor :guess
 
