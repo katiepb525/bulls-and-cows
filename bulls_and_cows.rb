@@ -104,8 +104,11 @@ class NewGame
   def start_master_game
     until player_input_ok?(@player.master_code)
       puts "enter your secret code. 4 digits, and numbers 1-6 only please.\n e.g. 1234"
-      @player.master_code = (gets.chomp)
+      @player.master_code = gets.chomp
     end
+
+    #convert master code into array
+    @player.master_code = @player.master_code.split('')
 
     puts 'game start!'
     current_round = 1
