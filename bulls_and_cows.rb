@@ -108,7 +108,7 @@ class NewGame
     until current_round == @MAX_TURNS
       puts "round #{current_round} / #{MAX_TURNS}"
       current_round += 1
-      if player_won?(@computer) == true
+      if player_won?(@computer.guess, @player.master_code) == true
         'computer won!!'
         return
       end
