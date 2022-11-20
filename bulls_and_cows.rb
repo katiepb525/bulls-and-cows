@@ -108,7 +108,7 @@ class NewGame
       @player.master_code = gets.chomp
     end
 
-    #convert master code into array
+    # convert master code into array
     @player.master_code = @player.master_code.split('')
 
     puts 'game start!'
