@@ -184,9 +184,12 @@ class NewGame
     # step 4: if computer didnt win...
     return unless player_won?(@computer.guess, @player.master_code) == false
 
-    # remove all elements of s that do not give the same score..
+    # index of computer's guess
+    guess_index = possible_codes.index(@computer.guess)
+
+    # remove all elements of array that do not have same amount of cows/bulls present
     possible_codes.each do |e|
-      possible_codes.slice!(possible_codes.index(@computer.guess)) if find_bulls_cows(e) != score
+      possible_codes.slice!(guess_index) if find_bulls_cows(e, @player.master_code) != score
     end
 
     # step 5: test a random element from list S
