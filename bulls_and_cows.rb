@@ -175,19 +175,22 @@ class NewGame
   end
 
   # automated: computer will solve game according to donald kuth's algorithm
-  def com_play_round
+  def com_play_round(possible_codes)
     # step 3: play guess to get response
-    score = find_bulls_cows(@computer.guess)
+    score = find_bulls_cows(@computer.guess, @player.master_code)
 
     p score
 
     # step 4: if computer didnt win...
     return unless player_won?(@computer.guess, @player.master_code) == false
 
-    #   # remove all elements of s that do not give the same score..
-    #   s.slice!(s.index(@computer.guess))
+    # remove all elements of s that do not give the same score..
+    possible_codes.each do |e|
+      possible_codes.slice!(possible_codes.index(@computer.guess)) if find_bulls_cows(e) != score
+    end
 
-    # end
+    # step 5: test a random element from list S
+    find_bulls_cows(possible_codes.sample)
   end
 
   # check if player won
