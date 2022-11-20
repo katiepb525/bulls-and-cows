@@ -116,6 +116,9 @@ class NewGame
 
       # step 2: start with initial guess 1122
       @computer.guess = 1122 if current_round == 1
+
+      # announce guess
+      puts "testing guess: #{@computer.guess}"
       if player_won?(@computer.guess, @player.master_code) == true
         'computer won!!'
         return
@@ -167,9 +170,6 @@ class NewGame
   # automated: computer will solve game according to donald kuth's algorithm
   def com_play_round
     # step 3: play guess to get response
-    puts "testing guess: #{@computer.guess}"
-
-    # step 3.5 get score
     score = find_bulls_cows(@computer.guess)
 
     p score
