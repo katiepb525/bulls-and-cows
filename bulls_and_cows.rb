@@ -124,7 +124,7 @@ class NewGame
       # announce guess
       puts "testing guess: #{@computer.guess}"
       if player_won?(@computer.guess, @player.master_code) == true
-        'computer won!!'
+        p 'computer won!!'
         return
       end
 
