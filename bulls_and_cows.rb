@@ -16,20 +16,20 @@ module Master
     @master_code.map!(&:to_s) # convert array to string (to compare with guess)
   end
 
-  def find_bulls_cows(player_guess, master_code)
-    # store player's guess in array form
-    player_guess = guess_to_array(player_guess.to_s)
+  def find_bulls_cows(raw_guess, master_code)
+    # convert to array form
+    guess = guess_to_array(raw_guess.to_s)
     # create var to store clue, clue being player guess at default
-    clue = player_guess
+    clue = guess
     master_code.each_with_index do |e, idx|
       # if player guess includes number AND matches place in master
-      if player_guess[idx] == e
+      if guess[idx] == e
         # replace clue num with "bull" (B)
         clue[idx] = 'B'
       # if player guess includes number in master code (but not correct place)
-      elsif player_guess.include?(e)
+      elsif guess.include?(e)
         # replace clue num with "cow" (A)
-        cow_index = player_guess.find_index(e)
+        cow_index = guess.find_index(e)
         clue[cow_index] = 'A'
       end
     end
