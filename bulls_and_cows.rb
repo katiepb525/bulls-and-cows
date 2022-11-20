@@ -118,7 +118,7 @@ class NewGame
       puts "round #{current_round} / #{@MAX_TURNS}"
       # step 2: start with initial guess 1122
       if current_round == 1
-        @computer.guess = 1122
+        @computer.guess = 1122.to_s
       else
         com_play_round
       end
