@@ -85,6 +85,8 @@ end
 
 # define rules for a game, define steps for a game, win/lose conditions etc.
 class NewGame
+  include Master
+  include Guesser
   def initialize
     @player = Player.new
     @computer = Computer.new
