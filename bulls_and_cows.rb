@@ -116,8 +116,6 @@ class NewGame
 
     until current_round == @MAX_TURNS
       puts "round #{current_round} / #{@MAX_TURNS}"
-      current_round += 1
-
       # step 2: start with initial guess 1122
       @computer.guess = 1122 if current_round == 1
 
@@ -127,7 +125,7 @@ class NewGame
         p 'computer won!!'
         return
       end
-
+      current_round += 1
     end
   end
 
