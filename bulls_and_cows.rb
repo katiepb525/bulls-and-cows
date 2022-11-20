@@ -16,13 +16,12 @@ module Master
     @master_code.map!(&:to_s) # convert array to string (to compare with guess)
   end
 
-  def find_bulls_cows(player_guess)
+  def find_bulls_cows(player_guess, master_code)
     # store player's guess in array form
-    player_guess = guess_to_array(player_guess)
+    player_guess = guess_to_array(player_guess.to_s)
     # create var to store clue, clue being player guess at default
     clue = player_guess
-
-    @master_code.each_with_index do |e, idx|
+    master_code.each_with_index do |e, idx|
       # if player guess includes number AND matches place in master
       if player_guess[idx] == e
         # replace clue num with "bull" (B)
@@ -63,8 +62,12 @@ end
 
 # store all methods relating to player
 class Player
-  extend Master
-  extend Guesser
+  include Master
+  include Guesser
+
+  def initialize
+    @guess = ''
+  end
 end
 
 # store all methods relating to computer
@@ -115,10 +118,13 @@ class NewGame
     puts 'game start!'
     current_round = 1
 
+    # generate the master code
+    @computer.generate_rand_code
+
     until current_round == @MAX_TURNS
       puts "you are on round #{current_round} / #{@MAX_TURNS}"
       play_round
-      if player_won?(@player) == true
+      if player_won?(@player.guess, @computer.master_code) == true
         puts 'you win!!'
         return
       end
@@ -143,7 +149,7 @@ class NewGame
   def play_round
     puts 'enter a guess:'
     @player.guess = (gets.chomp)
-    p @computer.find_bulls_cows(@player)
+    p @computer.find_bulls_cows(@player.guess, @computer.master_code)
   end
 
   # automated: computer will solve game according to donald kuth's algorithm
