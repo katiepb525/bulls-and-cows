@@ -67,11 +67,16 @@ class Player
 
   def initialize
     @guess = ''
+    @master_code = 'a'
   end
 end
 
 # store all methods relating to computer
 class Computer < Player
+  def initialize
+    # step 1: generate set S of all possible codes
+    @possible_codes = (1111..6666).to_a
+  end
 end
 
 # display input of player, output of computer, current round etc.
@@ -157,8 +162,7 @@ class NewGame
 
   # automated: computer will solve game according to donald kuth's algorithm
   def com_play_round
-    # step 1: generate set S of all possible codes
-    s = (1111..6666).to_a
+
 
     # step 2: start with initial guess 1122
     @computer.guess = 1122
