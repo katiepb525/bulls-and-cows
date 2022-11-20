@@ -171,8 +171,8 @@ class NewGame
 
     p score
 
-    # # step 4: if computer didnt win...
-    # if player_won?(@computer) == false
+    # step 4: if computer didnt win...
+    return unless player_won?(@computer.guess, @player.master_code) == false
 
     #   # remove all elements of s that do not give the same score..
     #   s.slice!(s.index(@computer.guess))
@@ -181,8 +181,8 @@ class NewGame
   end
 
   # check if player won
-  def player_won?(current_player)
-    @computer.find_bulls_cows(current_player) == %w[B B B B]
+  def player_won?(player_guess, master_code)
+    @computer.find_bulls_cows(player_guess, master_code) == %w[B B B B]
   end
 end
 
