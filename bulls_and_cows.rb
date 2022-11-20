@@ -193,7 +193,7 @@ class NewGame
     end
 
     # step 5: test a random element from list S
-    find_bulls_cows(possible_codes.sample)
+    find_bulls_cows(possible_codes.sample, @player.master_code)
   end
 
   # check if player won
