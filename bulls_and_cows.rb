@@ -73,6 +73,8 @@ end
 
 # store all methods relating to computer
 class Computer < Player
+  attr_accessor :possible_codes
+
   def initialize
     super
     # step 1: generate set S of all possible codes
