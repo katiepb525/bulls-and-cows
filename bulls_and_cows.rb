@@ -74,6 +74,7 @@ end
 # store all methods relating to computer
 class Computer < Player
   def initialize
+    super
     # step 1: generate set S of all possible codes
     @possible_codes = (1111..6666).to_a
   end
