@@ -113,10 +113,14 @@ class NewGame
     until current_round == @MAX_TURNS
       puts "round #{current_round} / #{@MAX_TURNS}"
       current_round += 1
+
+      # step 2: start with initial guess 1122
+      @computer.guess = 1122 if current_round == 1
       if player_won?(@computer.guess, @player.master_code) == true
         'computer won!!'
         return
       end
+
     end
   end
 
@@ -162,11 +166,6 @@ class NewGame
 
   # automated: computer will solve game according to donald kuth's algorithm
   def com_play_round
-
-
-    # step 2: start with initial guess 1122
-    @computer.guess = 1122
-
     # step 3: play guess to get response
     puts "testing guess: #{@computer.guess}"
 
