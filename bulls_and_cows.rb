@@ -7,7 +7,7 @@ module Master
   attr_accessor :master_code
 
   def initialize
-    @master_code = []
+    @master_code = 'a'
   end
 
   # generate a random 4 digit code using only the nums 1-6
