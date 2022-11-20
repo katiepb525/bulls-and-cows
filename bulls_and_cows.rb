@@ -167,7 +167,7 @@ class NewGame
     puts "testing guess: #{@computer.guess}"
 
     # step 3.5 get score
-    score = @computer.find_bulls_cows(@computer)
+    score = find_bulls_cows(@computer.guess)
 
     p score
 
