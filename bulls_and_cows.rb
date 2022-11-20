@@ -136,7 +136,8 @@ class NewGame
   end
 
   def master_or_guesser?
-    until answer == 'M' || answer == 'G'
+    answer = ''
+    until %w[M G].include?(answer)
       puts "press 'M' if you'd like to be the master.\npress 'G' if you'd like to be the guesser."
       answer = gets.chomp
     end
