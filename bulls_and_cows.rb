@@ -206,8 +206,14 @@ class NewGame
     guess_index = possible_codes.index(@computer.guess)
 
     # remove all elements of array that do not have same amount of cows/bulls present
-    possible_codes.each do |e|
-      possible_codes.slice!(guess_index) if find_bulls_cows(e, @player.master_code) != score
+    possible_codes.each_with_index do |e, idx|
+      # get score and num of bulls/cows for second element
+      second_score = find_bulls_cows(e, @player.master_code)
+
+      second_num_bulls_cows = count_bulls_cows(second_score)
+
+      # remove any elements that do not match the current score
+      possible_codes.slice!(idx) if num_bulls_cows != second_num_bulls_cows
     end
 
     # step 5: test a random element from list S
