@@ -174,12 +174,30 @@ class NewGame
     p @computer.find_bulls_cows(@player.guess, @computer.master_code)
   end
 
+  # return a hash with the number of bulls and cows in a clue
+  def count_bulls_cows(score)
+    num_bulls_cows = { bulls: 0, cows: 0 }
+
+    score.each do |e|
+      if e == 'B'
+        num_bulls_cows[:bulls] += 1
+      elsif e == 'A'
+        num_bulls_cows[:cows] += 1
+      end
+    end
+
+    num_bulls_cows
+  end
+
   # automated: computer will solve game according to donald kuth's algorithm
   def com_play_round(possible_codes)
     # step 3: play guess to get response
     score = find_bulls_cows(@computer.guess, @player.master_code)
 
     p score
+
+    # step 3.5: count cows present and bulls present
+    num_bulls_cows = count_bulls_cows(score)
 
     # step 4: if computer didnt win...
     return unless player_won?(@computer.guess, @player.master_code) == false
