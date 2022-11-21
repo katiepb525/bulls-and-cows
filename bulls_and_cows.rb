@@ -82,12 +82,12 @@ class Computer < Player
   # get list of TRUE possible codes (checked with input_ok)
   def true_possible_codes
     codes = (1111..6666).to_a
+    true_codes = codes
     # whene elemnt is removed, it skips element because of vacancy...
     codes.each_with_index do |e, idx|
-      binding.pry
-      codes.slice!(idx) if player_input_ok?(e.to_s) == false
+      true_codes.slice!(idx) if player_input_ok?(e.to_s) == false
     end
-    codes
+    true_codes
   end
 end
 
