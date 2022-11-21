@@ -212,9 +212,6 @@ class NewGame
     # step 4: if computer didnt win...
     return unless player_won?(guess, master_code) == false
 
-    # index of computer's guess
-    guess_index = possible_codes.index(guess)
-
     # remove all elements of array that do not have same amount of cows/bulls present
     possible_codes.each_with_index do |e, idx|
       # get score and num of bulls/cows for second element
