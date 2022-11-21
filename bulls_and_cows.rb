@@ -77,8 +77,17 @@ class Computer < Player
 
   def initialize
     super
-    # step 1: generate set S of all possible codes
-    @possible_codes = (1111..6666).to_a
+  end
+
+  # get list of TRUE possible codes (checked with input_ok)
+  def true_possible_codes
+    codes = (1111..6666).to_a
+    # whene elemnt is removed, it skips element because of vacancy...
+    codes.each_with_index do |e, idx|
+      binding.pry
+      codes.slice!(idx) if player_input_ok?(e.to_s) == false
+    end
+    codes
   end
 end
 
