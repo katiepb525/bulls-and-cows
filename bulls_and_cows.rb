@@ -152,7 +152,6 @@ class NewGame
         p 'computer won!!'
         return
       end
-      current_round += 1
     end
   end
 
