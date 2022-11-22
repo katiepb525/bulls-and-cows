@@ -212,23 +212,6 @@ class NewGame
     num_bulls_cows
   end
 
-  # find greatest score between first and previous score
-  def find_greatest_score(current_score, last_score)
-    # store best score (last score so far)
-    greatest_score = last_score
-
-    # check: current score has more or equal cows than last score?
-    # if yes...
-    # check: current score has more or as many bulls than last score?
-    if current_score[:cows] >= last_score[:cows] && (current_score[:bulls] >= last_score[:bulls])
-      # if yes...
-      # assign current score as greatest (cause bulls are more important than cows)
-      greatest_score = current_score
-    end
-    # return greatest score
-    greatest_score
-  end
-
   def narrow_list(possible_codes, last_guess, master_code)
     # get score and num of bulls/cows for last guess
     last_score = find_bulls_cows(last_guess, master_code)
@@ -240,22 +223,20 @@ class NewGame
       current_score = find_bulls_cows(e, master_code)
       current_num_bulls_cows = count_bulls_cows(current_score)
 
-      greatest_num_bulls_cows = find_greatest_score(current_num_bulls_cows, last_num_bulls_cows)
-
       # find index of current element
       index = possible_codes.index(e)
       # remove any elements with a score that does not match the greatest score
-      possible_codes.slice!(index) if current_num_bulls_cows != greatest_num_bulls_cows
+      possible_codes.slice!(index) if current_num_bulls_cows != last_num_bulls_cows
     end
 
-    p 'Number of elements remaining: '
+    @computer.true_codes = possible_codes
   end
 
   # automated: computer will solve game according to donald kuth's algorithm
   def com_play_round(possible_codes, last_guess, master_code)
     narrow_list(possible_codes, last_guess, master_code)
-    # step 5: return first element of the list as guess
-    possible_codes[0]
+    # step 5: return random element of the list as guess
+    possible_codes.sample
   end
 
   # check if player won
