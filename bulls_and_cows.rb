@@ -128,6 +128,7 @@ class NewGame
       # step 2: start with initial guess 1122
       if current_round == 1
         @computer.guess = 1122
+        narrow_list(@computer.true_possible_codes, @computer.guess, @player.master_code)
       else
         # or sample random guess from array of possible guesses
         last_guess = @computer.guess
@@ -215,20 +216,11 @@ class NewGame
     greatest_score
   end
 
-  # narrow list using 1122
-  def narrow_list(guess, possible_codes) 
-
-    possible_codes.each do |e|
-
-  end
-
-  # automated: computer will solve game according to donald kuth's algorithm
-  def com_play_round(possible_codes, last_guess, master_code)
-
+  def narrow_list(possible_codes, last_guess, master_code)
     # get score and num of bulls/cows for last guess
     last_score = find_bulls_cows(last_guess, master_code)
     last_num_bulls_cows = count_bulls_cows(last_score)
-    
+
     # remove all elements of array that do not have same amount of cows/bulls present
     possible_codes.each do |e|
       # get score and num of bulls/cows for current guess
@@ -243,7 +235,13 @@ class NewGame
       possible_codes.slice!(index) if current_num_bulls_cows != greatest_num_bulls_cows
     end
 
-    # step 5: use first element of the list as guess
+    p 'Number of elements remaining: '
+  end
+
+  # automated: computer will solve game according to donald kuth's algorithm
+  def com_play_round(possible_codes, last_guess, master_code)
+    narrow_list(possible_codes, last_guess, master_code)
+    # step 5: return first element of the list as guess
     possible_codes[0]
   end
 
