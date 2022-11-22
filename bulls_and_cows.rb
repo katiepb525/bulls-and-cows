@@ -207,22 +207,41 @@ class NewGame
     # store best score (last score so far)
     greatest_score = last_score
 
-    # step 4: if computer didnt win...
-    return unless player_won?(guess, master_code) == false
+    # check: current score has more or equal cows than last score?
+    # if yes...
+    # check: current score has more or as many bulls than last score?
+    if current_score[:cows] >= last_score[:cows] && (current_score[:bulls] >= last_score[:bulls])
+      # if yes...
+      # assign current score as greatest (cause bulls are more important than cows)
+      greatest_score = current_score
+    end
+    # return greatest score
+    greatest_score
+  end
 
+  # automated: computer will solve game according to donald kuth's algorithm
+  def com_play_round(possible_codes, last_guess, master_code)
     # remove all elements of array that do not have same amount of cows/bulls present
     possible_codes.each_with_index do |e, idx|
-      # get score and num of bulls/cows for second element
-      second_score = find_bulls_cows(e, master_code)
+      binding.pry
+      # get score and num of bulls/cows for last guess
+      last_score = find_bulls_cows(last_guess, master_code)
+      last_num_bulls_cows = count_bulls_cows(last_score)
 
-      second_num_bulls_cows = count_bulls_cows(second_score)
+      # get score and num of bulls/cows for current guess
+      current_score = find_bulls_cows(e, master_code)
+      current_num_bulls_cows = count_bulls_cows(current_score)
 
-      # remove any elements that do not match the current score
-      possible_codes.slice!(idx) if num_bulls_cows != second_num_bulls_cows
+      greatest_num_bulls_cows = find_greatest_score(current_num_bulls_cows, last_num_bulls_cows)
+
+      # find index of current element
+      index = @computer.true_possible_codes.index(e)
+      # remove any elements with a score that does not match the greatest score
+      @computer.true_possible_codes.slice!(index) if current_num_bulls_cows != greatest_num_bulls_cows
     end
 
-    # step 5: test a random element from list S
-    possible_codes.sample
+    # step 5: use first element of the list as guess
+    @computer.true_possible_codes[0]
   end
 
   # check if player won
