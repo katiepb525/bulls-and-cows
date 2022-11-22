@@ -73,10 +73,17 @@ end
 
 # store all methods relating to computer
 class Computer < Player
-  attr_accessor :possible_codes
+  attr_accessor :true_codes
+
+  def initialize
+    super
+    @true_codes = narrow_codes
+  end
+
+  private
 
   # get list of TRUE possible codes (checked with input_ok)
-  def true_possible_codes
+  def narrow_codes
     codes = (1111..6666).to_a
     true_codes = (1111..6666).to_a
     # whene elemnt is removed, it skips element because of vacancy...
