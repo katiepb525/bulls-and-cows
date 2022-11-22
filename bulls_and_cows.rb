@@ -202,14 +202,10 @@ class NewGame
     num_bulls_cows
   end
 
-  # automated: computer will solve game according to donald kuth's algorithm
-  def com_play_round(possible_codes, guess, master_code)
-    # step 3: play guess to get response
-    score = find_bulls_cows(guess, master_code)
-    p score
-
-    # step 3.5: count cows present and bulls present
-    num_bulls_cows = count_bulls_cows(score)
+  # find greatest score between first and previous score
+  def find_greatest_score(current_score, last_score)
+    # store best score (last score so far)
+    greatest_score = last_score
 
     # step 4: if computer didnt win...
     return unless player_won?(guess, master_code) == false
