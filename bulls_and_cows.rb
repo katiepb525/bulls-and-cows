@@ -135,11 +135,16 @@ class NewGame
       # step 2: start with initial guess 1122
       if current_round == 1
         @computer.guess = 1122
-        narrow_list(@computer.true_possible_codes, @computer.guess, @player.master_code)
+        narrow_list(@computer.true_codes, @computer.guess, @player.master_code)
+        p @computer.true_codes.length
+        current_round += 1
       else
         # or sample random guess from array of possible guesses
         last_guess = @computer.guess
-        @computer.guess = com_play_round(@computer.true_possible_codes, last_guess, @player.master_code)
+        @computer.guess = com_play_round(@computer.true_codes, last_guess, @player.master_code)
+        p @computer.true_codes.length
+        p find_bulls_cows(@computer.guess, @player.master_code)
+        current_round += 1
       end
       # announce guess
       puts "testing guess: #{@computer.guess}"
