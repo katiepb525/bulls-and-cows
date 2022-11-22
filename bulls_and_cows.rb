@@ -75,10 +75,6 @@ end
 class Computer < Player
   attr_accessor :possible_codes
 
-  def initialize
-    super
-  end
-
   # get list of TRUE possible codes (checked with input_ok)
   def true_possible_codes
     codes = (1111..6666).to_a
