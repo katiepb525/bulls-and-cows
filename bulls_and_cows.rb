@@ -235,13 +235,13 @@ class NewGame
       greatest_num_bulls_cows = find_greatest_score(current_num_bulls_cows, last_num_bulls_cows)
 
       # find index of current element
-      index = @computer.true_possible_codes.index(e)
+      index = possible_codes.index(e)
       # remove any elements with a score that does not match the greatest score
-      @computer.true_possible_codes.slice!(index) if current_num_bulls_cows != greatest_num_bulls_cows
+      possible_codes.slice!(index) if current_num_bulls_cows != greatest_num_bulls_cows
     end
 
     # step 5: use first element of the list as guess
-    @computer.true_possible_codes[0]
+    possible_codes[0]
   end
 
   # check if player won
