@@ -21,10 +21,7 @@ module Master
     guess = guess_to_array(raw_guess.to_s)
     # create var to store clue, clue being player guess at default
     clue = guess
-<<<<<<< HEAD
-=======
 
->>>>>>> 707bf40 (corrupt commit history :()
     master_code.each_with_index do |e, idx|
       # if player guess includes number AND matches place in master
       if guess[idx] == e
@@ -77,14 +74,6 @@ end
 
 # store all methods relating to computer
 class Computer < Player
-<<<<<<< HEAD
-  attr_accessor :possible_codes
-
-  def initialize
-    super
-    # step 1: generate set S of all possible codes
-    @possible_codes = (1111..6666).to_a
-=======
   attr_accessor :true_codes
 
   def initialize
@@ -105,7 +94,6 @@ class Computer < Player
       true_codes.slice!(index) if player_input_ok?(e.to_s) == false
     end
     true_codes
->>>>>>> 707bf40 (corrupt commit history :()
   end
 end
 
@@ -148,16 +136,11 @@ class NewGame
       # step 2: start with initial guess 1122
       if current_round == 1
         @computer.guess = 1122
-<<<<<<< HEAD
-      else
-        com_play_round(@computer.possible_codes)
-=======
         narrow_list(@computer.true_codes, @computer.guess, @player.master_code)
       else
         # or sample random guess from array of possible guesses
         last_guess = @computer.guess
         @computer.guess = com_play_round(@computer.true_codes, last_guess, @player.master_code)
->>>>>>> 707bf40 (corrupt commit history :()
       end
       # announce guess
       puts "testing guess: #{@computer.guess}"
@@ -196,16 +179,10 @@ class NewGame
       answer = gets.chomp
     end
 
-<<<<<<< HEAD
-    if answer == 'M'
-      start_master_game
-    elsif answer == 'G'
-=======
     case answer
     when 'M'
       start_master_game
     when 'G'
->>>>>>> 707bf40 (corrupt commit history :()
       start_guesser_game
     end
   end
@@ -216,28 +193,6 @@ class NewGame
     p @computer.find_bulls_cows(@player.guess, @computer.master_code)
   end
 
-<<<<<<< HEAD
-  # automated: computer will solve game according to donald kuth's algorithm
-  def com_play_round(possible_codes)
-    # step 3: play guess to get response
-    score = find_bulls_cows(@computer.guess, @player.master_code)
-
-    p score
-
-    # step 4: if computer didnt win...
-    return unless player_won?(@computer.guess, @player.master_code) == false
-
-    # index of computer's guess
-    guess_index = possible_codes.index(@computer.guess)
-
-    # remove all elements of array that do not have same amount of cows/bulls present
-    possible_codes.each do |e|
-      possible_codes.slice!(guess_index) if find_bulls_cows(e, @player.master_code) != score
-    end
-
-    # step 5: test a random element from list S
-    find_bulls_cows(possible_codes.sample, @player.master_code)
-=======
   # return a hash with the number of bulls and cows in a clue
   def count_bulls_cows(score)
     num_bulls_cows = { bulls: 0, cows: 0 }
@@ -298,7 +253,6 @@ class NewGame
     narrow_list(possible_codes, last_guess, master_code)
     # step 5: return first element of the list as guess
     possible_codes[0]
->>>>>>> 707bf40 (corrupt commit history :()
   end
 
   # check if player won
@@ -308,8 +262,4 @@ class NewGame
 end
 
 game = NewGame.new
-<<<<<<< HEAD
-game.master_or_guesser?
-=======
 game.start_master_game
->>>>>>> 707bf40 (corrupt commit history :()

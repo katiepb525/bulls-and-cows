@@ -1,0 +1,10 @@
+0000000000000000000000000000000000000000 e6e95476055027bf164d4d04af4a7c07fdc85877 katie <katiepb525@gmail.com> 1668467436 -0600	branch: Created from HEAD
+e6e95476055027bf164d4d04af4a7c07fdc85877 c77edce575eb2db1f8b1601f2ed6010eb51fdb5b katie <katiepb525@gmail.com> 1668467791 -0600	commit: create constant instance variable for maximum amount of turns
+c77edce575eb2db1f8b1601f2ed6010eb51fdb5b a90c57641a176753fa2a4b56150e2a195c469461 katie <katiepb525@gmail.com> 1668467849 -0600	commit: remind player of current num of turns
+a90c57641a176753fa2a4b56150e2a195c469461 bf86b9c453ff8a001b22ea4e7364301621e11e3b katie <katiepb525@gmail.com> 1668467983 -0600	commit: loop until max turns is reached
+bf86b9c453ff8a001b22ea4e7364301621e11e3b 90421dacec8f60da7d26c76a49c143729b99ab24 katie <katiepb525@gmail.com> 1668468637 -0600	commit: fix constant var typo
+90421dacec8f60da7d26c76a49c143729b99ab24 8df8d944f0ffd76f24db8d9bad51bebbde55cb4b katie <katiepb525@gmail.com> 1668469537 -0600	commit: display message with answer if user runs out of guesses
+8df8d944f0ffd76f24db8d9bad51bebbde55cb4b 45f6eb862f5752f2212da572fa2d8d2d9f0bbaa2 katie <katiepb525@gmail.com> 1668469599 -0600	commit: create method that checks for win
+45f6eb862f5752f2212da572fa2d8d2d9f0bbaa2 93a0e7ed2b88156d974bcf6d661645cb042c3a12 katie <katiepb525@gmail.com> 1668469942 -0600	commit: check for win condition
+93a0e7ed2b88156d974bcf6d661645cb042c3a12 005c10b29959686a1b6280fecbeac602c5c2c50f katie <katiepb525@gmail.com> 1668469962 -0600	commit: fix instance var typo
+005c10b29959686a1b6280fecbeac602c5c2c50f 0ed553890839831824a81ad0df7ac90bc9347dfa katie <katiepb525@gmail.com> 1668470078 -0600	commit: start game at runtime

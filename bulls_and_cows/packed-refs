@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+097a5132faea85e4e29321b93317eed73cd636ac refs/remotes/origin/detectCows
+43a071f914fcaa71efac22a77470e34ee4341f81 refs/remotes/origin/main
+d4664b0ba3722d0206bda66edb794a33f57e044b refs/remotes/origin/playerMasterOrGuesser

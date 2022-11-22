@@ -1,0 +1,73 @@
+0000000000000000000000000000000000000000 43a071f914fcaa71efac22a77470e34ee4341f81 katie <katiepb525@gmail.com> 1668470641 -0600	branch: Created from HEAD
+43a071f914fcaa71efac22a77470e34ee4341f81 b6aa39bf1d0e4312d0c6c499226ff46eac7680ac katie <katiepb525@gmail.com> 1668530166 -0600	commit: add instance var to determine if player is master or guesser
+b6aa39bf1d0e4312d0c6c499226ff46eac7680ac 756c3e65d41a37bbd19f88297bb66d1a18880412 katie <katiepb525@gmail.com> 1668530261 -0600	commit: add instance var to determine if computer is master or guesser
+756c3e65d41a37bbd19f88297bb66d1a18880412 48db5ca8d6da87401f522c6179588357e4b665cb katie <katiepb525@gmail.com> 1668530486 -0600	commit: create master or guesser method
+48db5ca8d6da87401f522c6179588357e4b665cb 86635c4ba6621e452f59f7f3125f56232f1cf209 katie <katiepb525@gmail.com> 1668530518 -0600	commit: allow master_or_guesser instance to be readable/writable for both player and computer
+86635c4ba6621e452f59f7f3125f56232f1cf209 b1a056dbad6dbf8291aa082412baa98f450a6a95 katie <katiepb525@gmail.com> 1668530562 -0600	commit: fix syntax
+b1a056dbad6dbf8291aa082412baa98f450a6a95 10eba5fd5460be08cacaedacefb1e90c8d5003da katie <katiepb525@gmail.com> 1668530657 -0600	commit: create master and guesser modules
+10eba5fd5460be08cacaedacefb1e90c8d5003da 9c62178dadab5cff54ae49acf373e2a4c04f1bb5 katie <katiepb525@gmail.com> 1668530779 -0600	commit: move guess methods to guesser module
+9c62178dadab5cff54ae49acf373e2a4c04f1bb5 cad184fb0b3941c476238f45f09e3e074908abce katie <katiepb525@gmail.com> 1668530973 -0600	commit: move master methods to master module
+cad184fb0b3941c476238f45f09e3e074908abce ef21ea5da0a82bee1f178600c837eb11975511a6 katie <katiepb525@gmail.com> 1668531262 -0600	commit: move initalization of instance vars to module
+ef21ea5da0a82bee1f178600c837eb11975511a6 1998e5281d36ac16d5e60cd65b12d96b876e7f00 katie <katiepb525@gmail.com> 1668531289 -0600	commit: have computer class inherit from player (as computer is just another player, but automated)
+1998e5281d36ac16d5e60cd65b12d96b876e7f00 8369e737b6c87fc2d7fba0dd1ee360a3cdcaa660 katie <katiepb525@gmail.com> 1668531368 -0600	commit: extend master/guesser modules to player class
+8369e737b6c87fc2d7fba0dd1ee360a3cdcaa660 b5e28d0801f6f832c2a9c363eb3cadc9557b033b katie <katiepb525@gmail.com> 1668531531 -0600	commit: add comments
+b5e28d0801f6f832c2a9c363eb3cadc9557b033b f739c80be8ec0cae252f436d8ba98a24ee4dfd5e katie <katiepb525@gmail.com> 1668531543 -0600	commit: fix instance variable
+f739c80be8ec0cae252f436d8ba98a24ee4dfd5e 6871dad3b03c74b3bddc192b676f4f4fe6b308b3 katie <katiepb525@gmail.com> 1668531786 -0600	commit: add comment
+6871dad3b03c74b3bddc192b676f4f4fe6b308b3 910ede0bca98d1d7e7a978c7a9ea877dc8699d84 katie <katiepb525@gmail.com> 1668531809 -0600	commit (amend): make start game method into specific start guesser
+910ede0bca98d1d7e7a978c7a9ea877dc8699d84 31d0c20eab50f78895e3e88860ab81b9184d7324 katie <katiepb525@gmail.com> 1668531906 -0600	commit: add seperate method to start a master game
+31d0c20eab50f78895e3e88860ab81b9184d7324 71c1c7e5ce63686c9d4cb899758e0927c6e6d6b5 katie <katiepb525@gmail.com> 1668531964 -0600	commit: remove unnecessary master/guesser variable
+71c1c7e5ce63686c9d4cb899758e0927c6e6d6b5 46387f6e898be515b39fedff6ed194db3b3f3d52 katie <katiepb525@gmail.com> 1668532020 -0600	commit: ask which game player wants to play on runtime
+46387f6e898be515b39fedff6ed194db3b3f3d52 391bf9a15fd9bdfe6f0c46b26f9f6c77abda9529 katie <katiepb525@gmail.com> 1668553354 -0600	commit: add method to start a master game, and ask for player's secret code
+391bf9a15fd9bdfe6f0c46b26f9f6c77abda9529 303545f63b4bdd1091593338a70fc7ddd7831b8b katie <katiepb525@gmail.com> 1668553397 -0600	commit: make master code writable (maybe fix in the future) and blank by default
+303545f63b4bdd1091593338a70fc7ddd7831b8b 445e32745d0392db17ceac776e21e2297c657b8d katie <katiepb525@gmail.com> 1668553426 -0600	commit: check if any input is ok, not just the guess
+445e32745d0392db17ceac776e21e2297c657b8d c675857c81e2f9f93a8d96674353a0eaed7a9d50 katie <katiepb525@gmail.com> 1668553670 -0600	commit: add argument to pass
+c675857c81e2f9f93a8d96674353a0eaed7a9d50 8566834fbb7286a6c5c7022a92fd3ba62df8f2e1 katie <katiepb525@gmail.com> 1668554060 -0600	commit: create method that will perform five-guess algorithm (to be split later)
+8566834fbb7286a6c5c7022a92fd3ba62df8f2e1 ea539a47a0c2852c623d44842c34571d57066a14 katie <katiepb525@gmail.com> 1668724444 -0600	commit: move automated guess to game class (for now?)
+ea539a47a0c2852c623d44842c34571d57066a14 6601a991a7089ec34214f8981be0c8eb6a545a0c katie <katiepb525@gmail.com> 1668791289 -0600	commit: edit comment
+6601a991a7089ec34214f8981be0c8eb6a545a0c 3885cd6a1a6585a04de22e24330c57d9e6f2a036 katie <katiepb525@gmail.com> 1668791409 -0600	commit: (wip) implement first 3 steps of swazeks algo
+3885cd6a1a6585a04de22e24330c57d9e6f2a036 2c2e7d1c4be43c81dfa487d496b684882db36dd5 katie <katiepb525@gmail.com> 1668791437 -0600	commit: wip of master game
+2c2e7d1c4be43c81dfa487d496b684882db36dd5 3113620a949581e83e5e8f0b01cef9ddeb9d4cf6 katie <katiepb525@gmail.com> 1668791651 -0600	commit: change parameter of find_bulls_cows to be more specific
+3113620a949581e83e5e8f0b01cef9ddeb9d4cf6 40a9f6ceebc8e077b25bace1f029efd1e78c907e katie <katiepb525@gmail.com> 1668976556 -0600	commit: refactor code to make player guess value and master code value not hardcoded into methods
+40a9f6ceebc8e077b25bace1f029efd1e78c907e 56c2d75be60ca9e0873b08d391dd2b949ff81ca4 katie <katiepb525@gmail.com> 1668982276 -0600	commit: include master and guesser methods in newgame (maybe i should reorganize these modules...)
+56c2d75be60ca9e0873b08d391dd2b949ff81ca4 5ce3eff427dab232824901a568a2a04bea213aa4 katie <katiepb525@gmail.com> 1668982323 -0600	commit: update method call with appropriate num of arguments
+5ce3eff427dab232824901a568a2a04bea213aa4 27673eb05f55ee802f0d1c1382b7fe91b176e8dd katie <katiepb525@gmail.com> 1668982335 -0600	commit: initialize answer variable
+27673eb05f55ee802f0d1c1382b7fe91b176e8dd 846a14ca43d3c8c6c8d548c7e818574415161fb4 katie <katiepb525@gmail.com> 1668982399 -0600	commit: update arguement with appropriate value
+846a14ca43d3c8c6c8d548c7e818574415161fb4 665eef495b09fc7f2d8967e2765b136f08d37dae katie <katiepb525@gmail.com> 1668982448 -0600	commit: add master code parameter instead of using hard-coded computer master code (because player can now call a master code)
+665eef495b09fc7f2d8967e2765b136f08d37dae 3ab90110bacf74668eca6a001ec2d828db895c1a katie <katiepb525@gmail.com> 1668983551 -0600	commit: step one of kuths algo: computer has a set of pre-generated guesses
+3ab90110bacf74668eca6a001ec2d828db895c1a caef470a8189fe80c7ffa98962d605dce9dfd7ba katie <katiepb525@gmail.com> 1668983683 -0600	commit: fix typo to call constant num of max turns
+caef470a8189fe80c7ffa98962d605dce9dfd7ba ff0dd0dabd7cc351762ca5873e375a93d2555ca3 katie <katiepb525@gmail.com> 1668983713 -0600	commit: step two of kuths algo, on first round, guess 1122
+ff0dd0dabd7cc351762ca5873e375a93d2555ca3 4aaa54288d0b448ddd3291e1a1ce9f1a475a0b6b katie <katiepb525@gmail.com> 1668983855 -0600	commit: announce guess about to be tested
+4aaa54288d0b448ddd3291e1a1ce9f1a475a0b6b be89e6620f33f56646d18b203c21b1ae3560e2d0 katie <katiepb525@gmail.com> 1668984639 -0600	commit: convert players master code into array to be compared
+be89e6620f33f56646d18b203c21b1ae3560e2d0 8f63da66a8d882b8e82ef522500dbc7a59f5f453 katie <katiepb525@gmail.com> 1668984745 -0600	commit: intialize master code as something wrong and useless so the player_input_ok method doesnt get confused
+8f63da66a8d882b8e82ef522500dbc7a59f5f453 fc3773ba04f4d5432ca51f291e5354058e684fe4 katie <katiepb525@gmail.com> 1668984777 -0600	commit: inherit instance variables from player
+fc3773ba04f4d5432ca51f291e5354058e684fe4 3c40594270718058f37f7f8f2d550ca044a9bdac katie <katiepb525@gmail.com> 1668984792 -0600	commit: comment cleanup
+3c40594270718058f37f7f8f2d550ca044a9bdac e45394548faf22bcd667a592867101880b08b4dc katie <katiepb525@gmail.com> 1668984959 -0600	commit: print if computer won
+e45394548faf22bcd667a592867101880b08b4dc e0667cc2d4721f8a22565e7ead1e4475d0711574 katie <katiepb525@gmail.com> 1668985247 -0600	commit: increment at end of loop
+e0667cc2d4721f8a22565e7ead1e4475d0711574 b4e90273f002813dcd0a3aae9f4960df2444b621 katie <katiepb525@gmail.com> 1668985288 -0600	commit: check if first round, if so, set guess to 1122, else, go through the com_play_round loop
+b4e90273f002813dcd0a3aae9f4960df2444b621 ba1fa064a5c1f766d660d0281e9a3e5426da39f7 katie <katiepb525@gmail.com> 1668985487 -0600	commit: convert intial guess to string (so it can be later converted into array... and tested.. etc)
+ba1fa064a5c1f766d660d0281e9a3e5426da39f7 3312c9e18bece53a1df335ce5cfd51e0014cce1f katie <katiepb525@gmail.com> 1668985553 -0600	commit: actually changed my mind sorry
+3312c9e18bece53a1df335ce5cfd51e0014cce1f 1bf6d2623c8dce14fd388419a6cc8283c51a682f katie <katiepb525@gmail.com> 1668987006 -0600	commit: rename parameter name to avoid confusion with variable that is guess but converted to array
+1bf6d2623c8dce14fd388419a6cc8283c51a682f fdff549ccd38003415e5c8bb0f06c2ee28e55e2d katie <katiepb525@gmail.com> 1668987047 -0600	commit: create accessor/modifier for possible codes
+fdff549ccd38003415e5c8bb0f06c2ee28e55e2d 3d269463d2297c53ed5c90bf8d248eaaa292f463 katie <katiepb525@gmail.com> 1668987076 -0600	commit: take current instance of computer's possible codes as a parameter
+3d269463d2297c53ed5c90bf8d248eaaa292f463 ef2d42c8a5858351dded92e3365166f365205d2a katie <katiepb525@gmail.com> 1668987124 -0600	commit: rename 's' to 'possible_codes'
+ef2d42c8a5858351dded92e3365166f365205d2a 80616bd3805e4c8d5d994d4666a5cf397d3a78c3 katie <katiepb525@gmail.com> 1668988589 -0600	commit: create var guess_index for readability
+80616bd3805e4c8d5d994d4666a5cf397d3a78c3 d4664b0ba3722d0206bda66edb794a33f57e044b katie <katiepb525@gmail.com> 1668988605 -0600	commit: pass second argument
+d4664b0ba3722d0206bda66edb794a33f57e044b 3d2115fda4a2d54352b36ba82cd35e30b0e2bb86 katie <katiepb525@gmail.com> 1669046610 -0600	commit: create method that counts num of bulls and cows
+3d2115fda4a2d54352b36ba82cd35e30b0e2bb86 33298fbc03c84af025e7584670118edb59807d69 katie <katiepb525@gmail.com> 1669047125 -0600	commit: create loop that checks current element for same score as guess, if not, remove element
+33298fbc03c84af025e7584670118edb59807d69 f3ab0d27ac1d7e5fb90f183bd00c6ae69a7182ab katie <katiepb525@gmail.com> 1669049518 -0600	commit: remove hardcoded values
+f3ab0d27ac1d7e5fb90f183bd00c6ae69a7182ab 403a78cb0bac15c6d3090c8cf178e1a1896080ac katie <katiepb525@gmail.com> 1669049586 -0600	commit: create method that eliminates codes that are not valid inputs
+403a78cb0bac15c6d3090c8cf178e1a1896080ac e0a1fabdfea10a7f71b42b522622c944ec68aff5 katie <katiepb525@gmail.com> 1669049688 -0600	commit: fix error where loop skipped over elements because it was removing from same list it was comparing to
+e0a1fabdfea10a7f71b42b522622c944ec68aff5 c82a3a3e37318677baf143057a3476dfec063cc8 katie <katiepb525@gmail.com> 1669049710 -0600	commit: pass in necessary args
+c82a3a3e37318677baf143057a3476dfec063cc8 ce976ee1962c23d5895952ff9bd9988dc8e028d3 katie <katiepb525@gmail.com> 1669050887 -0600	commit: fix bug where wrong index is grabbed skipping the code to be sliced
+ce976ee1962c23d5895952ff9bd9988dc8e028d3 fefe9fa4da82cff6932ff7b07de3b9908214642c katie <katiepb525@gmail.com> 1669050911 -0600	commit: remove useless var
+fefe9fa4da82cff6932ff7b07de3b9908214642c 2beaa77cd31be2a4bca47855f98b492c767c4d18 katie <katiepb525@gmail.com> 1669132150 -0600	commit: return random sample from list instead of clue...
+2beaa77cd31be2a4bca47855f98b492c767c4d18 a6452a9edfd4e94f08c31a5dcb777855dc3f686b katie <katiepb525@gmail.com> 1669132166 -0600	commit: assign guess to instance variable
+a6452a9edfd4e94f08c31a5dcb777855dc3f686b eec0e383489127feeb5095c36c9957f936aec65c katie <katiepb525@gmail.com> 1669134449 -0600	commit: store last guess and store calculated guess into current guess var
+eec0e383489127feeb5095c36c9957f936aec65c 4635e82541f7c1336696557e6c4be717201cd672 katie <katiepb525@gmail.com> 1669134478 -0600	commit: refactor variables to have clearer purpose
+4635e82541f7c1336696557e6c4be717201cd672 39e3e42da9b469ebce7eed9004968327c8bf4a9d katie <katiepb525@gmail.com> 1669136821 -0600	commit: WORK IN PROGRESS -- SLOW implement algorithm that finds the correct guess
+39e3e42da9b469ebce7eed9004968327c8bf4a9d 53786fefa0c4a5c09f8ee734d351e07b20efb657 katie <katiepb525@gmail.com> 1669154416 -0600	commit: narrow down same list as time goes on (and find element to remove using index instead of current loop iteration)
+53786fefa0c4a5c09f8ee734d351e07b20efb657 39edbba4eb58c921935346e19e79e2469411fbf1 katie <katiepb525@gmail.com> 1669154457 -0600	commit: remove unnecessary parameter
+39edbba4eb58c921935346e19e79e2469411fbf1 901a23a3671836b939763c7c5e7449461eb2fc8d katie <katiepb525@gmail.com> 1669154565 -0600	commit: move finding last guess to outside loop (so computer doesnt have to do extra unncessary calculation each time
+901a23a3671836b939763c7c5e7449461eb2fc8d 25a5c956823c9613debad57ef9c1501ecfaa3f2c katie <katiepb525@gmail.com> 1669155144 -0600	commit: remove unncessary initalization
+25a5c956823c9613debad57ef9c1501ecfaa3f2c a012b199bd3dc1b9c839d0c225eb7e1342f3bc1e katie <katiepb525@gmail.com> 1669155206 -0600	commit: create narrow list method instead of having it all in play round
+a012b199bd3dc1b9c839d0c225eb7e1342f3bc1e c19d4f91ea2957d21aa6b0e8f9de6ce09536520c katie <katiepb525@gmail.com> 1669155228 -0600	commit: use case instead of if/else

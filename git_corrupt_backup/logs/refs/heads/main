@@ -1,0 +1,28 @@
+0000000000000000000000000000000000000000 38c8644f6715cac4bec605b7012458e099821a64 katie <katiepb525@gmail.com> 1668370687 -0600	commit (initial): first commit
+38c8644f6715cac4bec605b7012458e099821a64 38c8644f6715cac4bec605b7012458e099821a64 katie <katiepb525@gmail.com> 1668370697 -0600	Branch: renamed refs/heads/main to refs/heads/main
+38c8644f6715cac4bec605b7012458e099821a64 7cc402c4d7b1f6eedde326211ab4702b9d19959d katie <katiepb525@gmail.com> 1668370726 -0600	commit: first commit
+7cc402c4d7b1f6eedde326211ab4702b9d19959d f4e7d59a29b82e7a6a9d316bf424b04af3839d2f katie <katiepb525@gmail.com> 1668370845 -0600	commit: update readme
+f4e7d59a29b82e7a6a9d316bf424b04af3839d2f 6c6f6c6d74822d4b70b50f478d7f2fe30854947b katie <katiepb525@gmail.com> 1668371447 -0600	commit: add player, computer, display, game classes
+6c6f6c6d74822d4b70b50f478d7f2fe30854947b e01065d8e48fac0ba92c80e39c5b2b650bdb76a4 katie <katiepb525@gmail.com> 1668371556 -0600	commit: initialize method player
+e01065d8e48fac0ba92c80e39c5b2b650bdb76a4 109abd01aa4741c4bf2e6860a7de106a6625643a katie <katiepb525@gmail.com> 1668371818 -0600	commit: create methods to manage player input
+109abd01aa4741c4bf2e6860a7de106a6625643a 030d8ee748a497b5080c240f55a0100be7119ffd katie <katiepb525@gmail.com> 1668372792 -0600	commit: properly check to see if player input is valid
+030d8ee748a497b5080c240f55a0100be7119ffd 0e42451da8a2de26f1996bc13e743d03aa6cb722 katie <katiepb525@gmail.com> 1668372943 -0600	commit: check if player input is ok before converting to num
+0e42451da8a2de26f1996bc13e743d03aa6cb722 930e357c098447e6f0d74b917c454cfd6fd5418c katie <katiepb525@gmail.com> 1668373187 -0600	commit: initialize master code instance var
+930e357c098447e6f0d74b917c454cfd6fd5418c 16ff0e5480fa075b65de2c16914955b2be275b3a katie <katiepb525@gmail.com> 1668373903 -0600	commit: generate random code and store in @master_code (don't know if this is too repetitve?)
+16ff0e5480fa075b65de2c16914955b2be275b3a 10c8205c8f567a236486dda38eda6bf54beee35f katie <katiepb525@gmail.com> 1668374878 -0600	commit: convert input into array instead of int
+10c8205c8f567a236486dda38eda6bf54beee35f 2191052c04a74013395582680191fe5db198fe04 katie <katiepb525@gmail.com> 1668374956 -0600	commit: dont convert master code to integer yet
+2191052c04a74013395582680191fe5db198fe04 46c0c2a6464191e7bbfd3ca30ca361c67ac83011 katie <katiepb525@gmail.com> 1668375200 -0600	commit: create and outline method to find bulls/cows and return clue
+46c0c2a6464191e7bbfd3ca30ca361c67ac83011 79f8b5f80aa9adb8c9f7ca4a5c592629b4cb39d7 katie <katiepb525@gmail.com> 1668377129 -0600	commit: read in input the traditional way
+79f8b5f80aa9adb8c9f7ca4a5c592629b4cb39d7 030c20864021ed27eacabe730eaed4e90a04e6d1 katie <katiepb525@gmail.com> 1668377172 -0600	commit: convert each element in master to string
+030c20864021ed27eacabe730eaed4e90a04e6d1 f0085ce07d3c1d38696edb1a6fd87fdd863d5fb7 katie <katiepb525@gmail.com> 1668377569 -0600	commit: fix bulls being assigned same value as cows
+f0085ce07d3c1d38696edb1a6fd87fdd863d5fb7 030c20864021ed27eacabe730eaed4e90a04e6d1 katie <katiepb525@gmail.com> 1668378794 -0600	reset: moving to HEAD~1
+030c20864021ed27eacabe730eaed4e90a04e6d1 416dd1da918fc08ea06b4a33abe2464349a02225 katie <katiepb525@gmail.com> 1668465126 -0600	commit: create loop to detect bulls and cows (wip)
+416dd1da918fc08ea06b4a33abe2464349a02225 39f6d3123da62155351df8ad0485a37cb2b269c5 katie <katiepb525@gmail.com> 1668465751 -0600	commit (merge): Merge branch 'detectCows'
+39f6d3123da62155351df8ad0485a37cb2b269c5 6371220535602987bd9d5bf14ed34d94d48882fb katie <katiepb525@gmail.com> 1668466030 -0600	commit: make guess readable and writeable
+6371220535602987bd9d5bf14ed34d94d48882fb e7e72c48070aa88bb31c95b85836dca7f90b8770 katie <katiepb525@gmail.com> 1668466219 -0600	commit: simplify player inital variable
+e7e72c48070aa88bb31c95b85836dca7f90b8770 007c364932dfb802b22d5153a3329c6fa2f94146 katie <katiepb525@gmail.com> 1668466377 -0600	commit: remove debug code and intialize computer with master code
+007c364932dfb802b22d5153a3329c6fa2f94146 b7f6af1c5ceb408f3f7d8e529be551b2a22ef176 katie <katiepb525@gmail.com> 1668466536 -0600	commit: inital variables for display
+b7f6af1c5ceb408f3f7d8e529be551b2a22ef176 d6c67c23bb1655c6b2c5954404f5e020c2315823 katie <katiepb525@gmail.com> 1668466564 -0600	commit: inital variables and methods for newgame
+d6c67c23bb1655c6b2c5954404f5e020c2315823 e6e95476055027bf164d4d04af4a7c07fdc85877 katie <katiepb525@gmail.com> 1668467357 -0600	merge playRound: Fast-forward
+e6e95476055027bf164d4d04af4a7c07fdc85877 0ed553890839831824a81ad0df7ac90bc9347dfa katie <katiepb525@gmail.com> 1668470141 -0600	merge playGame: Fast-forward
+0ed553890839831824a81ad0df7ac90bc9347dfa 43a071f914fcaa71efac22a77470e34ee4341f81 katie <katiepb525@gmail.com> 1668470187 -0600	commit: cleanup
