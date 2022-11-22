@@ -182,9 +182,10 @@ class NewGame
       answer = gets.chomp
     end
 
-    if answer == 'M'
+    case answer
+    when 'M'
       start_master_game
-    elsif answer == 'G'
+    when 'G'
       start_guesser_game
     end
   end
@@ -200,9 +201,10 @@ class NewGame
     num_bulls_cows = { bulls: 0, cows: 0 }
 
     score.each do |e|
-      if e == 'B'
+      case e
+      when 'B'
         num_bulls_cows[:bulls] += 1
-      elsif e == 'A'
+      when 'A'
         num_bulls_cows[:cows] += 1
       end
     end
