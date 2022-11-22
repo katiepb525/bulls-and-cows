@@ -133,7 +133,7 @@ class NewGame
       if current_round == 1
         @computer.guess = 1122
       else
-        com_play_round(@computer.true_possible_codes, @computer.guess, @player.master_code)
+        @computer.guess = com_play_round(@computer.true_possible_codes, @computer.guess, @player.master_code)   
       end
       # announce guess
       puts "testing guess: #{@computer.guess}"
