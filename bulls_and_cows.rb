@@ -225,8 +225,8 @@ class NewGame
 
       # find index of current element
       index = possible_codes.index(e)
-      # remove any elements with a score that does not match the greatest score
-      possible_codes.slice!(index) if current_num_bulls_cows != last_num_bulls_cows
+      # remove any elements with a score that matches the last element
+      possible_codes.slice!(index) if current_num_bulls_cows != { cows: 0, bulls: 4 }
     end
 
     @computer.true_codes = possible_codes
@@ -236,7 +236,7 @@ class NewGame
   def com_play_round(possible_codes, last_guess, master_code)
     narrow_list(possible_codes, last_guess, master_code)
     # step 5: return random element of the list as guess
-    possible_codes.sample
+    possible_codes[0]
   end
 
   # check if player won
