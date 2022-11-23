@@ -21,10 +21,6 @@ module Master
     guess = guess_to_array(raw_guess.to_s)
     # create var to store clue, clue being player guess at default
     clue = guess
-<<<<<<< HEAD
-=======
-
->>>>>>> 707bf40 (corrupt commit history :()
     master_code.each_with_index do |e, idx|
       # if player guess includes number AND matches place in master
       if guess[idx] == e
@@ -77,25 +73,10 @@ end
 
 # store all methods relating to computer
 class Computer < Player
-<<<<<<< HEAD
-<<<<<<< HEAD
-  attr_accessor :possible_codes
-
-  def initialize
-    super
-    # step 1: generate set S of all possible codes
-    @possible_codes = (1111..6666).to_a
-=======
   attr_accessor :true_codes
 
   def initialize
     super
-=======
-  attr_accessor :true_codes
-
-  def initialize
-    super
->>>>>>> computerGuesser
     @true_codes = narrow_codes
   end
 
@@ -112,10 +93,6 @@ class Computer < Player
       true_codes.slice!(index) if player_input_ok?(e.to_s) == false
     end
     true_codes
-<<<<<<< HEAD
->>>>>>> 707bf40 (corrupt commit history :()
-=======
->>>>>>> computerGuesser
   end
 end
 
@@ -158,18 +135,6 @@ class NewGame
       # step 2: start with initial guess 1122
       if current_round == 1
         @computer.guess = 1122
-<<<<<<< HEAD
-<<<<<<< HEAD
-      else
-        com_play_round(@computer.possible_codes)
-=======
-        narrow_list(@computer.true_codes, @computer.guess, @player.master_code)
-      else
-        # or sample random guess from array of possible guesses
-        last_guess = @computer.guess
-        @computer.guess = com_play_round(@computer.true_codes, last_guess, @player.master_code)
->>>>>>> 707bf40 (corrupt commit history :()
-=======
         narrow_list(@computer.true_codes, @computer.guess, @player.master_code)
         p @computer.true_codes.length
         current_round += 1
@@ -180,7 +145,6 @@ class NewGame
         p @computer.true_codes.length
         p find_bulls_cows(@computer.guess, @player.master_code)
         current_round += 1
->>>>>>> computerGuesser
       end
       # announce guess
       puts "testing guess: #{@computer.guess}"
@@ -218,23 +182,10 @@ class NewGame
       answer = gets.chomp
     end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if answer == 'M'
-      start_master_game
-    elsif answer == 'G'
-=======
     case answer
     when 'M'
       start_master_game
     when 'G'
->>>>>>> 707bf40 (corrupt commit history :()
-=======
-    case answer
-    when 'M'
-      start_master_game
-    when 'G'
->>>>>>> computerGuesser
       start_guesser_game
     end
   end
@@ -245,17 +196,9 @@ class NewGame
     p @computer.find_bulls_cows(@player.guess, @computer.master_code)
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  # automated: computer will solve game according to donald kuth's algorithm
-  def com_play_round(possible_codes)
-    # step 3: play guess to get response
-    score = find_bulls_cows(@computer.guess, @player.master_code)
-=======
   # return a hash with the number of bulls and cows in a clue
   def count_bulls_cows(score)
     num_bulls_cows = { bulls: 0, cows: 0 }
->>>>>>> computerGuesser
 
     score.each do |e|
       case e
@@ -286,79 +229,14 @@ class NewGame
       possible_codes.slice!(index) if current_num_bulls_cows != { cows: 0, bulls: 4 }
     end
 
-<<<<<<< HEAD
-    # step 5: test a random element from list S
-    find_bulls_cows(possible_codes.sample, @player.master_code)
-=======
-  # return a hash with the number of bulls and cows in a clue
-  def count_bulls_cows(score)
-    num_bulls_cows = { bulls: 0, cows: 0 }
-
-    score.each do |e|
-      case e
-      when 'B'
-        num_bulls_cows[:bulls] += 1
-      when 'A'
-        num_bulls_cows[:cows] += 1
-      end
-    end
-
-    num_bulls_cows
-  end
-
-  # find greatest score between first and previous score
-  def find_greatest_score(current_score, last_score)
-    # store best score (last score so far)
-    greatest_score = last_score
-
-    # check: current score has more or equal cows than last score?
-    # if yes...
-    # check: current score has more or as many bulls than last score?
-    if current_score[:cows] >= last_score[:cows] && (current_score[:bulls] >= last_score[:bulls])
-      # if yes...
-      # assign current score as greatest (cause bulls are more important than cows)
-      greatest_score = current_score
-    end
-    # return greatest score
-    greatest_score
-  end
-
-  def narrow_list(possible_codes, last_guess, master_code)
-    # get score and num of bulls/cows for last guess
-    last_score = find_bulls_cows(last_guess, master_code)
-    last_num_bulls_cows = count_bulls_cows(last_score)
-
-    # remove all elements of array that do not have same amount of cows/bulls present
-    possible_codes.each do |e|
-      # get score and num of bulls/cows for current guess
-      current_score = find_bulls_cows(e, master_code)
-      current_num_bulls_cows = count_bulls_cows(current_score)
-
-      greatest_num_bulls_cows = find_greatest_score(current_num_bulls_cows, last_num_bulls_cows)
-
-      # find index of current element
-      index = possible_codes.index(e)
-      # remove any elements with a score that does not match the greatest score
-      possible_codes.slice!(index) if current_num_bulls_cows != greatest_num_bulls_cows
-
-      p "Number of elements remaining: #{possible_codes.length}"
-    end
-=======
     @computer.true_codes = possible_codes
->>>>>>> computerGuesser
   end
 
   # automated: computer will solve game according to donald kuth's algorithm
   def com_play_round(possible_codes, last_guess, master_code)
     narrow_list(possible_codes, last_guess, master_code)
-<<<<<<< HEAD
-    # step 5: return first element of the list as guess
-    possible_codes[0]
->>>>>>> 707bf40 (corrupt commit history :()
-=======
     # step 5: return random element of the list as guess
     possible_codes[0]
->>>>>>> computerGuesser
   end
 
   # check if player won
@@ -368,8 +246,4 @@ class NewGame
 end
 
 game = NewGame.new
-<<<<<<< HEAD
-game.master_or_guesser?
-=======
 game.start_master_game
->>>>>>> 707bf40 (corrupt commit history :()
