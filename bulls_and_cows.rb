@@ -78,6 +78,7 @@ end
 # store all methods relating to computer
 class Computer < Player
 <<<<<<< HEAD
+<<<<<<< HEAD
   attr_accessor :possible_codes
 
   def initialize
@@ -89,6 +90,12 @@ class Computer < Player
 
   def initialize
     super
+=======
+  attr_accessor :true_codes
+
+  def initialize
+    super
+>>>>>>> computerGuesser
     @true_codes = narrow_codes
   end
 
@@ -105,7 +112,10 @@ class Computer < Player
       true_codes.slice!(index) if player_input_ok?(e.to_s) == false
     end
     true_codes
+<<<<<<< HEAD
 >>>>>>> 707bf40 (corrupt commit history :()
+=======
+>>>>>>> computerGuesser
   end
 end
 
@@ -149,6 +159,7 @@ class NewGame
       if current_round == 1
         @computer.guess = 1122
 <<<<<<< HEAD
+<<<<<<< HEAD
       else
         com_play_round(@computer.possible_codes)
 =======
@@ -158,6 +169,18 @@ class NewGame
         last_guess = @computer.guess
         @computer.guess = com_play_round(@computer.true_codes, last_guess, @player.master_code)
 >>>>>>> 707bf40 (corrupt commit history :()
+=======
+        narrow_list(@computer.true_codes, @computer.guess, @player.master_code)
+        p @computer.true_codes.length
+        current_round += 1
+      else
+        # or sample random guess from array of possible guesses
+        last_guess = @computer.guess
+        @computer.guess = com_play_round(@computer.true_codes, last_guess, @player.master_code)
+        p @computer.true_codes.length
+        p find_bulls_cows(@computer.guess, @player.master_code)
+        current_round += 1
+>>>>>>> computerGuesser
       end
       # announce guess
       puts "testing guess: #{@computer.guess}"
@@ -165,7 +188,6 @@ class NewGame
         p 'computer won!!'
         return
       end
-      current_round += 1
     end
   end
 
@@ -197,6 +219,7 @@ class NewGame
     end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if answer == 'M'
       start_master_game
     elsif answer == 'G'
@@ -206,6 +229,12 @@ class NewGame
       start_master_game
     when 'G'
 >>>>>>> 707bf40 (corrupt commit history :()
+=======
+    case answer
+    when 'M'
+      start_master_game
+    when 'G'
+>>>>>>> computerGuesser
       start_guesser_game
     end
   end
@@ -217,24 +246,47 @@ class NewGame
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   # automated: computer will solve game according to donald kuth's algorithm
   def com_play_round(possible_codes)
     # step 3: play guess to get response
     score = find_bulls_cows(@computer.guess, @player.master_code)
+=======
+  # return a hash with the number of bulls and cows in a clue
+  def count_bulls_cows(score)
+    num_bulls_cows = { bulls: 0, cows: 0 }
+>>>>>>> computerGuesser
 
-    p score
+    score.each do |e|
+      case e
+      when 'B'
+        num_bulls_cows[:bulls] += 1
+      when 'A'
+        num_bulls_cows[:cows] += 1
+      end
+    end
 
-    # step 4: if computer didnt win...
-    return unless player_won?(@computer.guess, @player.master_code) == false
+    num_bulls_cows
+  end
 
-    # index of computer's guess
-    guess_index = possible_codes.index(@computer.guess)
+  def narrow_list(possible_codes, last_guess, master_code)
+    # get score and num of bulls/cows for last guess
+    last_score = find_bulls_cows(last_guess, master_code)
+    last_num_bulls_cows = count_bulls_cows(last_score)
 
     # remove all elements of array that do not have same amount of cows/bulls present
     possible_codes.each do |e|
-      possible_codes.slice!(guess_index) if find_bulls_cows(e, @player.master_code) != score
+      # get score and num of bulls/cows for current guess
+      current_score = find_bulls_cows(e, master_code)
+      current_num_bulls_cows = count_bulls_cows(current_score)
+
+      # find index of current element
+      index = possible_codes.index(e)
+      # remove any elements with a score that matches the last element
+      possible_codes.slice!(index) if current_num_bulls_cows != { cows: 0, bulls: 4 }
     end
 
+<<<<<<< HEAD
     # step 5: test a random element from list S
     find_bulls_cows(possible_codes.sample, @player.master_code)
 =======
@@ -291,14 +343,22 @@ class NewGame
 
       p "Number of elements remaining: #{possible_codes.length}"
     end
+=======
+    @computer.true_codes = possible_codes
+>>>>>>> computerGuesser
   end
 
   # automated: computer will solve game according to donald kuth's algorithm
   def com_play_round(possible_codes, last_guess, master_code)
     narrow_list(possible_codes, last_guess, master_code)
+<<<<<<< HEAD
     # step 5: return first element of the list as guess
     possible_codes[0]
 >>>>>>> 707bf40 (corrupt commit history :()
+=======
+    # step 5: return random element of the list as guess
+    possible_codes[0]
+>>>>>>> computerGuesser
   end
 
   # check if player won
